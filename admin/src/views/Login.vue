@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-20 15:24:28
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-20 16:14:08
- * @Description: 
- -->
+ 
  <template>
    <div>
      <el-card header="请先登录" class="login-card">

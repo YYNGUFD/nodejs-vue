@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-19 14:17:25
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-19 19:53:20
- * @Description: 
- -->
+ 
 <template>
   <div>
     <h1>英雄列表</h1>

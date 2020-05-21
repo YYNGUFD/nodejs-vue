@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-22 16:59:13
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-23 16:55:57
- * @Description: 
- -->
+
  <template>
    <div>
      <div class="topbar bg-black py-2 px-4  d-flex ai-center">

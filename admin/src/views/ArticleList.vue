@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-20 10:54:34
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-20 11:40:35
- * @Description: 
- -->
+
 <template>
   <div>
     <h1>分类列表</h1>

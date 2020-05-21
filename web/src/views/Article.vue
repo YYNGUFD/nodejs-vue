@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-24 15:24:27
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-24 16:59:01
- * @Description: 
- -->
+ 
  <template>
    <div class="page-article bg-white" v-if="model">
      <div class="d-flex py-3 px-2 border-bottom" >

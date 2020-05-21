@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-20 15:06:54
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-20 16:10:30
- * @Description: 
- -->
+
 <template>
   <div>
     <h1>管理员列表</h1>

@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-20 10:54:45
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-20 13:53:21
- * @Description: 
- -->
+
 <template>
   <div>
     <h1>{{ id ?"编辑":"新建"}}文章</h1>

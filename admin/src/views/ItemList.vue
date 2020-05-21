@@ -1,10 +1,4 @@
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-19 14:17:25
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-19 17:57:36
- * @Description: 
- -->
+ 
 <template>
   <div>
     <h1>物品列表</h1>

@@ -1,11 +1,4 @@
-import dayjs from 'dayjs';
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-22 17:06:30
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-24 17:04:34
- * @Description: 
- -->
+
 <template>
 <div>
   <swiper class='swiImgs' :options="swiperOption" v-if="swiperSlides.length!=0">

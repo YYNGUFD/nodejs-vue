@@ -1,11 +1,4 @@
-import Tooltip from 'tooltip.js/dist/umd/tooltip.min.js';
-<!--
- * @Author: MaFengyan
- * @Date: 2020-02-24 17:02:24
- * @LastEditors: MaFengyan
- * @LastEditTime: 2020-02-24 21:27:28
- * @Description: 
- -->
+
  <template>
    <div v-if="model">
     <div class="topbar bg-black py-2 px-4  d-flex ai-center">

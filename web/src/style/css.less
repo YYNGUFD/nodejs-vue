@@ -1,0 +1,311 @@
+// 样式重置 reset
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline:none;
+}
+html{
+  font-size: 13px;
+}
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+  background-color: #f1f1f1;
+  -webkit-font-smoothing:antaliased;
+}
+a{
+  color: #999; 
+}
+p{
+  line-height: 1.5em;
+}
+ul li{
+  list-style: none;
+}
+
+//color
+@color-primary:#db9e3f;
+@color-white:#fff;
+@color-black:#000;
+@color-gray:#999;
+@color-dark:#222;
+@color-dark-1:#333;
+@color-light:#f9f9f9;
+ 
+.backgroundcard(@className,@pngName){
+  .text-@{className}{
+       color: @pngName;
+  }
+  .bg-@{className}{
+    background-color: @pngName;
+  }
+}
+@bgcardList:dannger,blue-1,blue,info,primary,white,black,gray-1,gray,dark,dark-1,light;
+@colorList:#791a15,#1f3695,#4394e4,#4b67af,#db9e3f,#fff,#000,#666,#999,#222,#333,#f9f9f9;
+.loop(@i) when (@i < length(@bgcardList)+1){
+  .backgroundcard(extract(@bgcardList, @i),extract(@colorList, @i));
+  .loop(@i+1);
+};
+.loop(1);
+
+
+//text
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right!important;
+}
+.text-center{
+  text-align: center;
+}
+.text-ellipsis{
+   display: inline-block;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+
+}
+
+@base-font-size:1rem;
+@fontKey:xxs,xs,sm,md,lg,xl; 
+      //8 10 12 13 14 16
+@fontSize:0.5rem ,0.625rem,0.9231rem,1.0769rem,1.2308rem;
+//font-size
+
+.loop10(@i) when (@i < length(@fontKey)+1){
+  .fontSize(extract(@fontKey, @i),extract(@fontSize, @i));
+  .loop10(@i+1);
+}
+.fontSize(@className,@pngName,@base:1rem){
+  .fs-@{className}{
+    font-size: @pngName;
+  }
+}
+.loop10(1);
+
+//宽度
+.w-100{
+  width: 100%;
+}
+.h-100{
+  width: 100%;
+}
+//flex布局
+.d-flex{
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-wrap{
+ flex-wrap: wrap;
+}
+.flex-1{
+  flex:1;
+}
+.flex-grow-1{
+  flex-grow:1;
+}
+
+@flexJC:flex-start,flex-end,center,space-between,space-around;
+@flexKey:start,end,center,between,around;
+.flex(@className,@pngName){
+  .jc-@{className}{
+    justify-content: @pngName;
+  }
+}
+.loop2(@i) when (@i < length(@flexJC)+1){
+  .flex(extract(@flexKey, @i),extract(@flexJC, @i));
+  .loop2(@i+1);
+};
+.loop2(1);
+
+
+@flexAI:flex-start,flex-end,center,stretch;
+@flexAIKey:start,end,center,stretch;
+.flexai(@className,@pngName){
+  .ai-@{className}{
+    align-items: @pngName;
+  }
+}
+.loop3(@i) when (@i < length(@flexAI)+1){
+  .flexai(extract(@flexAIKey, @i),extract(@flexAI, @i));
+  .loop3(@i+1);
+};
+.loop3(1);
+
+//sapcing
+@spacingKey:m,p;
+@spacingValue:margin,padding;
+
+@spacingDirectionKey:t,r,b,l;
+@spacingDirectionValue:top,right,bottom,left;
+@spacing-base-size:1rem;
+@spacingSizeKey:0,1,2,3,4,5;
+@spacingSizeValue:0,0.25,0.5,1,1.5,3; 
+ 
+.space(@space,@direct, @size,@key1,@key2,@value){
+  .e{
+    text-align: center;
+  } 
+}
+//m-0 mx-0
+.loop4(@i) when (@i < length(@spacingKey)+1){ 
+  
+  .loop7(@k) when (@k < length(@spacingSizeKey)+1){ 
+    @space:extract(@spacingKey, @i); 
+    @size:extract(@spacingSizeKey, @k);
+    @key1: extract(@spacingValue, @i); 
+    @value:extract(@spacingSizeValue, @k);
+    .@{space}-@{size}{
+      @{key1}:@value *@spacing-base-size!important;
+    }  
+    .loop7(@k+1);  
+  } 
+  .loop8(@k) when (@k < length(@spacingSizeKey)+1){ 
+    @space:extract(@spacingKey, @i); 
+    @size:extract(@spacingSizeKey, @k);
+    @key1: extract(@spacingValue, @i); 
+    @value:extract(@spacingSizeValue, @k);
+    .@{space}x-@{size}{
+      @{key1}-left:@value *@spacing-base-size!important;
+      @{key1}-right:@value * @spacing-base-size!important;
+    }  
+    .loop8(@k+1);  
+  } 
+  .loop9(@k) when (@k < length(@spacingSizeKey)+1){ 
+    @space:extract(@spacingKey, @i); 
+    @size:extract(@spacingSizeKey, @k);
+    @key1: extract(@spacingValue, @i); 
+    @value:extract(@spacingSizeValue, @k);
+    .@{space}y-@{size}{
+      @{key1}-top:@value * @spacing-base-size!important;
+      @{key1}-bottom:@value *@spacing-base-size!important;
+    }  
+    .loop9(@k+1);  
+  }
+  .loop6(@k) when (@k < length(@spacingSizeKey)+1){ 
+    @space:extract(@spacingKey, @i); 
+    @size:extract(@spacingSizeKey, @k);
+    @key1: extract(@spacingValue, @i); 
+    @value:extract(@spacingSizeValue, @k);
+    .@{space}-@{size}{
+      @{key1}-top:@value*@spacing-base-size!important;
+      @{key1}-bottom:@value*@spacing-base-size!important;
+    }  
+    .loop6(@k+1);  
+  } 
+  .loop5(@j) when (@j < length(@spacingDirectionKey)+1){
+    .loop6(@k) when (@k < length(@spacingSizeKey)+1){ 
+      @space:extract(@spacingKey, @i);
+      @direct:extract(@spacingDirectionKey, @j);
+      @size:extract(@spacingSizeKey, @k);
+      @key1: extract(@spacingValue, @i);
+      @key2:extract(@spacingDirectionValue, @j);
+      @value:extract(@spacingSizeValue, @k);
+      .@{space}@{direct}-@{size}{
+        @{key1}-@{key2}:@value*@spacing-base-size!important;
+      }  
+      .loop6(@k+1);  
+    }  
+    .loop6(1);
+    .loop5(@j+1); 
+  }
+  .loop7(1);
+  .loop8(1); 
+  .loop5(1);
+  .loop9(1);
+  .loop4(@i+1);  
+}
+.loop4(1);
+
+ 
+//button
+.btn{
+  border: none;
+  border-radius: 0.1538rem;
+  font-size: 0.9231rem;
+  padding: 0.2rem 0.6rem;
+  &.btn-lg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i{
+      color: @color-primary;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+    }
+    background: #fcfcfc;
+    border: 1px solid #eceef0;
+    padding:0.2rem 1rem;
+    font-size: 1reem;
+  }
+}
+
+
+//导航
+.nav 
+{
+  display: flex; 
+  .nav-item{
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.2rem;
+    &.active{
+      color:#db9e3f ;
+      border-bottom-color: #db9e3f;
+     
+    }
+     
+  }
+  
+}
+.nav-inverse
+{ 
+  .nav-item{
+    color: #fff; 
+    &.active{
+      color: #fff;
+      border-bottom-color: #fff;
+    }
+    
+  }
+  
+}
+
+//sprite 精灵图片 雪碧图
+.sprite{
+  background: url("../assets/bg/index.png") no-repeat 0 0 ;
+  background-size: 28.8462rem;
+  display: inline-block;
+  &.sprite-news{
+    width: 1.7692rem;
+    height: 1.5385rem; 
+    background-position: 63.546% 15.52%;
+  }
+  &.sprite-story{
+    width: 1.7692rem;
+    height: 1.5385rem; 
+    background-position: 63.546% 15.52%;
+  }
+  &.sprite-arrow{
+    width: 0.7692rem;
+    height: 0.7692rem; 
+    background-position: 38.577% 52.046%;
+  }
+}
+
+//borders
+@border:top,right,bottom,left;
+.loopborder(@k) when (@k < length(@border)+1){ 
+  @key:extract(@border, @k);
+  .border-@{key}{
+    border-@{key}:1px solid #e4e0e0;
+  }
+  .loopborder(@k+1); 
+}
+.loopborder(1);
+
